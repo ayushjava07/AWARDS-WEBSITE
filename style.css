@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+    cursor: none;
+}
+@font-face {
+    font-family: plainlight;
+    src: url(./plain-light-webfont.ttf);
+}
+@font-face {
+    font-family: plainregular;
+    src: url(./plain-regular-webfont.ttf);
+}
+@font-face {
+    font-family: silklight;
+    src: url(./silkserif-lightitalic-webfont.ttf);
+}
+@font-face {
+    font-family: silkregular;
+    src: url(./silkserif-regularitalic-webfont.ttf);
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    font-family: "plainlight";
+    color: #fff;
+    
+}
+#crsr {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.4px solid white;
+    position: fixed;  /* Use `fixed` instead of `absolute` */
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    pointer-events: none; /* Ensures it doesn't block clicks */
+    transform: translate(-50%, -50%);
+    will-change: transform; /* Optimizes animation */
+
+}
+
+#loader{
+    width: 100vw;
+    height: 100%;
+    z-index: 9999;
+    position: fixed;
+    padding: 25vh 10vw;
+    background-color: #030303;
+    overflow-y: scroll; /* Enable scrolling */
+    
+}
+
+
+.line{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    overflow: hidden; 
+    margin-bottom: 1px;
+    
+}
+#line1-part1{
+    display: flex;
+    justify-content: flex-start;
+    gap: 0vw;
+    align-items: center;
+    margin-top: 1.6vh;
+    padding-right: 1vw;
+}
+#line1-part1 h5,h6{
+    font-family: silklight;
+    font-weight: 700;
+    font-size: 3vw;
+}
+#line1-part1 h5{
+    width: 6vw;
+}
+ 
+.line h1{
+    font-size: 6.5vw;
+    line-height: 15vh;
+    text-transform: uppercase;
+    font-weight: 600;
+    
+}
+#loader h2{
+    font-size: 6vw;
+    margin-bottom: 1vw;
+    margin-left: 1.2vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    font-family: plainlight;
+    
+}
+@keyframes fontchange {
+    0%{
+        font-family: plainlight  ;
+        -webkit-text-stroke: 1px white;
+        color: white;
+        opacity: 1;
+    }
+    48%{
+        font-family: silregular;
+        opacity: 0;
+        -webkit-text-stroke: 1px white;
+        color: white;
+    }
+    50%{
+        font-family: plainlight;
+        opacity: 1;
+        -webkit-text-stroke: 1px white;
+        color:transparent;
+    }
+    100%{
+        font-family: silkregular;
+        -webkit-text-stroke: 1px transparent;
+        color: transparent;
+        opacity: 0;
+    }
+}
+ #main{
+    position: relative;
+    background-color: #030303;
+    
+
+ }
+ #page1{
+    height: 100vh;
+    width: 100%;
+    background:#151515;
+    padding:2vw;
+ }
+ #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+ }
+ #logo{
+    display: flex;
+    gap: 2vw;
+    width: 10vw;
+    /* background-color: wheat; */
+    align-items: center;
+    justify-content: flex-end;
+    height: 8vh;
+    margin-bottom: 1vw;
+ }
+ #logo svg{
+    /* background-color: yellowgreen; */
+    gap: 2px;
+    /* width: 4vw; */
+ }
+ #nav #navpart2{
+    width: 30vw;
+    /* background-color: teal; */
+    padding: 1vw;
+ }
+ #nav #navpart2 h3{
+    font-weight: 300;
+    font-size: 1.12vw;
+    
+    
+ }
+
+  #nav #navpart3{
+    display: flex;
+    gap: 4vh;
+    text-transform: uppercase;
+    /* background-color: yellowgreen; */
+  }
+  #nav #navpart3 h4{
+    font-size: 1vw;
+    font-weight: 300;
+  }
+  .hero{
+    /* background-color: red;  */
+    /* margin-top: 2px; */
+    width: 100%;
+    margin-left: 23vw;
+    min-height: fit-content;
+    overflow: hidden;
+    position: relative;
+    z-index: 99;
+    
+  }
+  .hero h1{
+    text-transform: uppercase;
+    font-size: 7vw;
+    line-height: 8vw;
+    overflow: visible;
+  }
+  .hero:nth-child(2){
+    margin-top: 10vh;}
+ #hero3 {
+    display: flex;
+    min-height: 17.4vh;
+ }
+#hero3 h1{
+    font-size: 7vw;
+    text-transform: uppercase;
+    border-bottom: 1vw solid white;
+    transition: 0.4s ease;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    color: white;
+}
+#hero3 h3{
+    font-size: 12vh;
+}
+#hero3 h1:hover{
+    -webkit-text-stroke: 1px white;
+    color: rgba(255, 255, 255, 0);
+    font-weight: 300;
+    border-bottom: 0px ;
+}
