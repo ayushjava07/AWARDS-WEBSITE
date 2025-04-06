@@ -137,6 +137,7 @@ html , body{
     width: 100%;
     background:#151515;
     padding:2vw;
+    position: relative;
  }
  #nav{
     display: flex;
@@ -184,7 +185,7 @@ html , body{
   .hero{
     /* background-color: red;  */
     /* margin-top: 2px; */
-    width: 100%;
+    width: fit-content;
     margin-left: 23vw;
     min-height: fit-content;
     overflow: hidden;
@@ -225,7 +226,7 @@ html , body{
 }
 #page2{
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     position: relative;
     margin-top: 18vw;
     /* background-color: salmon; */
@@ -238,7 +239,11 @@ html , body{
     position: relative;
     top: 0;
     left: 25vw;
-    
+    /* overflow: hidden; */
+    /* opacity: 0; */
+    background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
+    background-size: cover;
+    background-position: center;
     
 }
 #page2 #video1 img{
@@ -251,6 +256,7 @@ html , body{
     object-position: center;
     height: 99%;
     width: 100%;
+    opacity: 0;
 }
 #page2 #video-cursor{
     width: 10vw;
@@ -259,7 +265,7 @@ html , body{
     border-radius: 50%;
     position: absolute;
     top: -12%;
-    left: 40vw;
+    left: 15vw;
     z-index: 999;
     align-items: center;
     justify-content: center;
@@ -272,9 +278,10 @@ html , body{
 #page3{
     min-height: fit-content;
     width: 100%;
-    background-color:#d00000;
+    /* background-color:#d00000; */
     position: relative;
-    padding: 5vw 0;
+    padding: 20vw 0;
+    margin-top: 10vh;
     /* background-color: #FFA63D; */
 }
 
@@ -285,7 +292,7 @@ html , body{
     /* background-color: #FFA63D; */
     left: 30vw;
     /* background-color: cadetblue; */
-    border-bottom: 0.2vh solid #ffe9e9;
+    /* border-bottom: 0.2vh solid #ffe9e9; */
 }
 .container >h1{
     font-size: 8vw;
@@ -328,6 +335,15 @@ html , body{
     width: 80vw;
     /* position: absolute; */
     height: 0.2vh;
+    background-color: #ffe9e9;
+    
+}
+.container #downline{
+    width: 80vw;
+    /* position: absolute; */
+    height: 0.2vh;
+    position:absolute;
+    bottom: 7%;
     background-color: #ffe9e9;
     
 }
@@ -378,7 +394,7 @@ html , body{
     content: "We Work With";
     position: absolute;
     left: 30vw;
-    top: -7vh;
+    top: -4vh;
     font-weight: 300;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -513,3 +529,212 @@ html , body{
     font-size: 1.3vw;
     margin-top:1vw;
 }
+#ourprojects{
+    position: relative;
+    width: 100%;
+    min-height:200vh;
+    padding-top: 20vh;
+    /* background-color: thistle; */
+}
+#ourprojects >h1{
+    font-size: 7vw;
+    width: 120%;
+    margin-left: 30vw;
+    padding-top: 5vw;
+
+}
+#ourprojects .underline{
+    width: 55%;
+    height: 0.15vw;
+    margin-top: 3vw;
+    background-color: white;
+    margin-left: 30vw;
+}
+/* #ourprojects .project-container{
+    min-height: 100vh;
+    width: 100%;
+
+    margin-top: 6vw;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    
+    
+
+} */
+/* #ourprojects .project-container .elems{
+    width: 30%;
+    height: 40vw;
+    background-color: sienna; 
+    flex-wrap: nowrap;
+    margin-left: 2vw;
+    flex-shrink: 0;
+    margin-top: 2vw;
+    position: relative;
+    overflow-x: hidden;
+    margin-bottom: 10vh;
+     
+}
+
+
+/* #ourprojects .project-container .elems #circle{
+    width: 18vw;
+    height: 18vw;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    left: 20%;
+    top: 20vh;
+}
+.project-container .elems #circle #a2{
+    rotate: -45deg;
+}
+.project-container .elems h2{
+    height: fit-content;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+    text-align: start;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+/* .project-container .elems >h4{
+    font-size: 0.9vw;
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-between;
+    height: fit-content;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+
+    text-transform: uppercase;
+    color: #ffffff;
+
+}  */
+
+/* .project-container .elems h4 span{
+    margin-left: 28vw;
+    width: 20%;
+    position: absolute;
+    margin-top: 1vw;
+    background-color: yellowgreen;
+} */
+/* .canvas_container{
+    z-index: 99990 !important;
+    pointer-events: none;
+} */
+#ourprojects #elems{
+    width: 100%;
+    height: 200vh;
+    flex-wrap: wrap;
+    
+    /* background-color: rgb(86, 86, 24); */
+    position: relative;
+    padding: 4vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+#image-div{
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    width: 25vw;
+    height: 35vw;
+    /* background-color: yellowgreen; */
+        
+}
+#image-div img{
+    width: 100%;
+    height: 100%;
+    /* position: absolute; */
+    /* border-radius: 5vw; */
+
+}
+.canvas_container{
+    z-index: 99999 !important;
+    pointer-events: none;
+}
+#image-divc{
+    width: 25vw;
+    height: 35vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    /* background-color: #3F7DF4; */
+}
+#image-divc #cir{
+    width: 15vw;
+    border-radius: 50%;
+    border: 0.3vw solid white;
+    height: 15vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    /* background-color: yellowgreen; */
+}
+#cir img{
+    rotate: -120deg;
+    /* background-color: #3F7DF4; */
+    /* margin-left: 4vw; */
+    position: absolute;
+}
+#cir #circlein {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    scale: 0;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+    transition-delay: 0.1s;
+}
+.mousefollower{
+    border:2px soliid white;
+    background-color: white;
+    scale: 2;
+    mix-blend-mode: difference;
+}
+#cir #circlein h6{
+    position: absolute;
+    color: black;
+    font-size: 0.95vw;
+    width: 80%;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+#cir:hover #circlein{
+    scale: 1;
+}
+/* #cir #circlein:hover h6 {
+    scale: 1;
+} */
+#flg {
+    width: 20vw;
+    height: 30vw;
+    position: absolute;
+    top: 36%;
+    left: 33%;
+    /* display: none; */
+    opacity: 0;
+    z-index: 9; /* Add this to ensure it's on top */
+    pointer-events: none; /* Optional: make it non-interactive */
+    transition: opacity 0.3s ease;
+    /* background-color: #3F7DF4; */
+}
+#flg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

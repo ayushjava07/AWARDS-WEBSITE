@@ -5,16 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>obys Agency</title>
-    <link rel="shortcut icon" href="./favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.css" />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <!-- locomotive css  -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- shery css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.css" />
+    <!-- remixicon cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- css file  -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- <div id="crsr"></div> -->
-    <!-- <div id="loader">
+    <!-- <div class="mousefollower"></div> -->
+    <div id="loader">
         <div class="line">
             <div id="line1-part1">
                 <h5>0</h5>
@@ -29,7 +33,7 @@
             <h1>is loading right</h1>
             <h2>Now</h2>
         </div>
-    </div> -->
+    </div>
     <div id="main">
         <div id="page1" data-scroll data-scroll-speed="-2.5">
             <div id="nav">
@@ -96,18 +100,59 @@
             <div class="hero" id="hero4">
                 <h1>experiences</h1>
             </div>
+            <div id="flg"><img  src="./Flag.jpg" alt=""></div>
 
         </div>
         <div id="page2" data-scroll data-scroll-speed="-2.5">
-            <div id="video-cursor">
-                <i class="ri-play-mini-fill"></i>
-            </div>
+            
 
             <div id="video1">
-                <img src="https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg" alt="">
-                <video autoplay muted
+                <div id="video-cursor">
+                    <i class="ri-play-mini-fill"></i>
+                </div>
+                <video autoplay loop 
                     src="https://obys.agency/wp-content/uploads/2024/12/Obys-Showreel-2024.mp4"></video>
             </div>
+        </div>
+        <div id="ourprojects">
+            <h1>OUR PROJECTS</h1>
+            <div class="underline"></div>
+            <div id="elems">
+                <div id="image-div">
+                    <img src="./img1-1.jpg" alt="">
+                    <img src="./img1-2.jpg" alt="">
+                </div>
+                <div id="image-div">
+                    <img src="./img2-1.jpg" alt="">
+                    <img src="./img2-2.jpg" alt="">
+                </div>
+                <div id="image-divc">
+                    <div id="cir">
+                        <img src="./arrow.png" alt="">
+                        <div id="circlein">
+                            <h6>HI WE CAN HELP IN MAKING YOUR BRAND LOOK PREMIUM 💗</h6>
+                        </div>
+                        
+                    </div>
+                   
+            </div>
+            <div id="image-divc">
+                <div id="cir">
+                    <img style="rotate: -90deg;" src="./arrow.png" alt="">
+                    <div id="circlein">
+                        <h6>OUR DESIGN ARE BESTS❤️‍🔥</h6>
+                    </div>
+                </div>
+        </div>
+        <div id="image-div">
+            <img src="./img3-1.jpg" alt="">
+            <img src="./img3-2.jpg" alt="">
+        </div>
+        <div id="image-div">
+            <img src="./img4-1.jpg" alt="">
+            <img src="./img4-2.jpg" alt="">
+        </div>
+
         </div>
         <div id="page3" data-scroll data-scroll-speed="-2.5">
             <div class="container">
@@ -161,7 +206,8 @@
                         <br><br>
                         Would you like to have award winning site or unique branding style, please say hi to our manager
                         —info@obys.agency.
-                        And we will help you with the pleasure.</p>
+                        And we will help you with the pleasure.
+                    </p>
                 </div>
                 <div class="elems">
                     <div class="inelem">
@@ -210,7 +256,7 @@
                 <h1><span>PARTNER</span> - TRAVEL - <span>SCIENCE</span> -</h1>
                 <h1>PARTNER - <span>TRAVEL</span> - SCIENCE -</h1>
 
-                
+
 
             </div>
             <div class="runelem2">
@@ -220,7 +266,7 @@
 
             </div>
         </div>
-        <div id="footer"data-scroll>
+        <div id="footer" data-scroll>
             <h1>Lets's Create</h1>
             <div id="adress">
                 <div id="social">
@@ -242,11 +288,11 @@
                     <h4>
                         info@obys.agency</h4>
                 </div>
-                
+
 
             </div>
             <div id="footerline">
-                
+
             </div>
             <h2>obys agency © 2025</h2>
         </div>
@@ -255,8 +301,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
         integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js" integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script type="text/javascript" src="https://unpkg.com/sheryjs/dist/Shery.js"></script> <!-- Recommended -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"
+        integrity="sha512-AcqPGqrrAEtEwe+ADO5R8RbdFi7tuU7b/A2cJJH0Im0D18NRk5p5s4B3E5PMuO81KFw0ClN7J5SHVUJz7KOb0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/aayushchouhan24/sheryjs@main/dist/Shery.js"></script>
     <script src="script.js"></script>
 
 </body>
