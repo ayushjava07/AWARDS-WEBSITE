@@ -51,7 +51,7 @@ function loderanimation() {
                 else {
                     count.innerHTML = grow;
                 }
-            }, 25)
+            }, 40)
         }
     })
     tl.to(".line h2", {
@@ -82,85 +82,84 @@ function loderanimation() {
 
     })
 }
-function cursor(){
+function cursor() {
     Shery.mouseFollower({
         //Parameters are optional.
         skew: true,
         ease: "cubic-bezier(0.23, 1, 0.320, 1)",
         duration: 1,
-      }); 
-      var mousemove= document.querySelector("#video1");
-      var vid=document.querySelector("#video1 video");
-      var cursor=document.querySelector("#video-cursor");
-      mousemove.addEventListener("mouseenter",function(){
-        mousemove.addEventListener("mousemove",function(pos){
-            gsap.to(".mousefollower",{
-                opacity:0
+    });
+    var mousemove = document.querySelector("#video1");
+    var vid = document.querySelector("#video1 video");
+    var cursor = document.querySelector("#video-cursor");
+    mousemove.addEventListener("mouseenter", function () {
+        mousemove.addEventListener("mousemove", function (pos) {
+            gsap.to(".mousefollower", {
+                opacity: 0
             }),
-            gsap.to("#video-cursor",{
-                left:pos.x-450,
-                top:pos.y - 400,
-            })
+                gsap.to("#video-cursor", {
+                    left: pos.x - 450,
+                    top: pos.y - 400,
+                })
         })
     })
-    Shery.makeMagnet("#navpart3 h4" /* Element to target.*/, {
+    Shery.makeMagnet("#navpart3 h4, #nav .brand_svg, #social h4, #social h5" /* Element to target.*/, {
         //Parameters are optional.
 
     });
-    Shery.makeMagnet("#nav .brand_svg" /* Element to target.*/, {
-        //Parameters are optional.
-    });
-    mousemove.addEventListener("mouseleave",function(){
-            gsap.to(".mousefollower",{
-                opacity:1,
-            })
-            gsap.to("#video-cursor",{
-                left:95,
-              top:-25,    
-            })
+    mousemove.addEventListener("mouseleave", function () {
+        gsap.to(".mousefollower", {
+            opacity: 1,
+        })
+        gsap.to("#video-cursor", {
+            left: 95,
+            top: -25,
+        })
     })
-    var flag=0;
-    mousemove.addEventListener("click", function(){
-        if(flag==0){
+    var flag = 0;
+    mousemove.addEventListener("click", function () {
+        if (flag == 0) {
             vid.play();
-        vid.style.opacity=1;
-        cursor.innerHTML=`<i class="ri-pause-mini-fill"></i>`;
-        gsap.to("#video-cursor",{
-            scale:0.5
-        })
-        flag=1
+            vid.style.opacity = 1;
+            cursor.innerHTML = `<i class="ri-pause-mini-fill"></i>`;
+            gsap.to("#video-cursor", {
+                scale: 0.5
+            })
+            flag = 1
         }
-        
-        else{
+
+        else {
             vid.pause();
-        vid.style.opacity=0;
-        cursor.innerHTML=`<i class="ri-play-mini-fill"></i>`;
-        gsap.to("#video-cursor",{
-            scale:1
-        })
-        flag=0
+            vid.style.opacity = 0;
+            cursor.innerHTML = `<i class="ri-play-mini-fill"></i>`;
+            gsap.to("#video-cursor", {
+                scale: 1
+            })
+            flag = 0
         }
 
     })
-    document.addEventListener("mousemove",function(dets){
-    gsap.to("#flg",{
-        x:dets.x -650,
-        y:dets.y-550,
-        
-    })
-})
-document.addEventListener("mouseleave",function(){
-    document.querySelector("#hero3").addEventListener("mouseenter",function(){
-        gsap.to("#flg",{
-            opacity:1
+    document.addEventListener("mousemove", function (dets) {
+        gsap.to("#flg", {
+            x: dets.x - 650,
+            y: dets.y - 550,
+
         })
     })
-    document.querySelector("#hero3").addEventListener("mouseleave",function(){
-        gsap.to("#flg",{
-            opacity:0
-        })
-    })
-})
+    // Correct logic: changing the flag animation to be consistently attached
+    let hero3 = document.querySelector("#hero3");
+    if (hero3) {
+        hero3.addEventListener("mouseenter", function () {
+            gsap.to("#flg", {
+                opacity: 1
+            });
+        });
+        hero3.addEventListener("mouseleave", function () {
+            gsap.to("#flg", {
+                opacity: 0
+            });
+        });
+    }
 }
 function sheryanimation() {
     Shery.imageEffect("#image-div", {
@@ -168,12 +167,59 @@ function sheryanimation() {
         gooey: true,
         // debug:true,
         // config:{"a":{"value":2,"range":[0,30]},"b":{"value":0.75,"range":[-1,1]},"zindex":{"value":-9996999,"range":[-9999999,9999999]},"aspect":{"value":0.7241195453907675},"gooey":{"value":true},"infiniteGooey":{"value":false},"growSize":{"value":4,"range":[1,15]},"durationOut":{"value":1,"range":[0.1,5]},"durationIn":{"value":1.5,"range":[0.1,5]},"displaceAmount":{"value":0.5},"masker":{"value":true},"maskVal":{"value":1.23,"range":[1,5]},"scrollType":{"value":0},"geoVertex":{"range":[1,64],"value":1},"noEffectGooey":{"value":true},"onMouse":{"value":0},"noise_speed":{"value":0.5,"range":[0,10]},"metaball":{"value":0.33,"range":[0,2]},"discard_threshold":{"value":0.5,"range":[0,1]},"antialias_threshold":{"value":0.01,"range":[0,0.1]},"noise_height":{"value":0.5,"range":[0,2]},"noise_scale":{"value":10,"range":[0,100]}}
-      });
-    
+    });
+
 }
+
+function scrollAnimation() {
+    gsap.from("#page3 .container h1, #page3 .container p, #page3 #imagearea, #page3 .inelem", {
+        y: 100,
+        opacity: 0,
+        stagger: 0.1,
+        duration: 2,
+        scrollTrigger: {
+            trigger: "#page3",
+            scroller: "#main",
+            start: "top 60%",
+            end: "top 30%",
+            scrub: 2
+        }
+    });
+
+    gsap.from("#ourprojects h1, #ourprojects .underline", {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+        scrollTrigger: {
+            trigger: "#ourprojects",
+            scroller: "#main",
+            start: "top 70%",
+            end: "top 50%",
+            scrub: 1
+        }
+    });
+
+    // Animate project images
+    gsap.utils.toArray("#image-div, #image-divc").forEach(function (elem) {
+        gsap.from(elem, {
+            y: 50,
+            opacity: 0,
+            duration: 1.5,
+            scrollTrigger: {
+                trigger: elem,
+                scroller: "#main",
+                start: "top 80%",
+                end: "top 50%",
+                scrub: 1
+            }
+        });
+    });
+}
+
 loderanimation();
 cursor();
 locomotive();
 sheryanimation();
+scrollAnimation();
 
 

@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -6,65 +6,77 @@
 
     cursor: none;
 }
+
 @font-face {
     font-family: plainlight;
     src: url(./plain-light-webfont.ttf);
 }
+
 @font-face {
     font-family: plainregular;
     src: url(./plain-regular-webfont.ttf);
 }
+
 @font-face {
     font-family: silklight;
     src: url(./silkserif-lightitalic-webfont.ttf);
 }
+
 @font-face {
     font-family: silkregular;
     src: url(./silkserif-regularitalic-webfont.ttf);
 }
-html , body{
+
+html,
+body {
     height: 100%;
     width: 100%;
     font-family: "plainlight";
     color: #fff;
-    
+
 }
+
 #crsr {
     width: 40px;
     height: 40px;
     border-radius: 50%;
     border: 1.4px solid white;
-    position: fixed;  /* Use `fixed` instead of `absolute` */
+    position: fixed;
+    /* Use `fixed` instead of `absolute` */
     top: 0;
     left: 0;
     z-index: 99999;
-    pointer-events: none; /* Ensures it doesn't block clicks */
+    pointer-events: none;
+    /* Ensures it doesn't block clicks */
     transform: translate(-50%, -50%);
-    will-change: transform; /* Optimizes animation */
+    will-change: transform;
+    /* Optimizes animation */
 
 }
 
-#loader{
+#loader {
     width: 100vw;
     height: 100%;
     z-index: 9999;
     position: fixed;
     padding: 25vh 10vw;
     background-color: #030303;
-    overflow-y: scroll; /* Enable scrolling */
-    
+    overflow-y: scroll;
+    /* Enable scrolling */
+
 }
 
 
-.line{
+.line {
     width: 100%;
     height: fit-content;
     display: flex;
-    overflow: hidden; 
+    overflow: hidden;
     margin-bottom: 1px;
-    
+
 }
-#line1-part1{
+
+#line1-part1 {
     display: flex;
     justify-content: flex-start;
     gap: 0vw;
@@ -72,23 +84,27 @@ html , body{
     margin-top: 1.6vh;
     padding-right: 1vw;
 }
-#line1-part1 h5,h6{
+
+#line1-part1 h5,
+h6 {
     font-family: silklight;
     font-weight: 700;
     font-size: 3vw;
 }
-#line1-part1 h5{
+
+#line1-part1 h5 {
     width: 6vw;
 }
- 
-.line h1{
+
+.line h1 {
     font-size: 6.5vw;
     line-height: 15vh;
     text-transform: uppercase;
     font-weight: 600;
-    
+
 }
-#loader h2{
+
+#loader h2 {
     font-size: 6vw;
     margin-bottom: 1vw;
     margin-left: 1.2vw;
@@ -98,54 +114,64 @@ html , body{
     animation-iteration-count: infinite;
     opacity: 0;
     font-family: plainlight;
-    
+
 }
+
 @keyframes fontchange {
-    0%{
-        font-family: plainlight  ;
+    0% {
+        font-family: plainlight;
         -webkit-text-stroke: 1px white;
         color: white;
         opacity: 1;
     }
-    48%{
+
+    48% {
         font-family: silregular;
         opacity: 0;
         -webkit-text-stroke: 1px white;
         color: white;
     }
-    50%{
+
+    50% {
         font-family: plainlight;
         opacity: 1;
         -webkit-text-stroke: 1px white;
-        color:transparent;
+        color: transparent;
     }
-    100%{
+
+    100% {
         font-family: silkregular;
         -webkit-text-stroke: 1px transparent;
         color: transparent;
         opacity: 0;
     }
 }
- #main{
+
+#main {
     position: relative;
     background-color: #151515;
     overflow-x: hidden;
 
- }
- #page1{
+}
+
+#page1 {
     height: 100vh;
     width: 100%;
-    background:#151515;
-    padding:2vw;
+    background: #151515;
+    padding: 2vw;
     position: relative;
- }
- #nav{
+}
+
+#nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
- }
- #logo{
+    z-index: 999;
+    position: relative;
+
+}
+
+#logo {
     display: flex;
     gap: 2vw;
     width: 10vw;
@@ -154,35 +180,66 @@ html , body{
     justify-content: flex-end;
     height: 8vh;
     margin-bottom: 1vw;
- }
- #logo svg{
+}
+
+#logo svg {
     /* background-color: yellowgreen; */
     gap: 2px;
     /* width: 4vw; */
- }
- #nav #navpart2{
+}
+
+#nav #navpart2 {
     width: 30vw;
     /* background-color: teal; */
     padding: 1vw;
- }
- #nav #navpart2 h3{
+}
+
+#nav #navpart2 h3 {
     font-weight: 300;
     font-size: 1.12vw;
-    
-    
- }
 
-  #nav #navpart3{
+
+}
+
+#nav #navpart3 {
     display: flex;
     gap: 4vh;
     text-transform: uppercase;
+    text-transform: uppercase;
     /* background-color: yellowgreen; */
-  }
-  #nav #navpart3 h4{
+}
+
+.link-hover {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.link-hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.4s ease-out;
+}
+
+.link-hover:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#nav #navpart3 h4 {
     font-size: 1vw;
     font-weight: 300;
-  }
-  .hero{
+}
+
+.hero {
     /* background-color: red;  */
     /* margin-top: 2px; */
     width: fit-content;
@@ -191,21 +248,26 @@ html , body{
     overflow: hidden;
     position: relative;
     z-index: 99;
-    
-  }
-  .hero h1{
+
+}
+
+.hero h1 {
     text-transform: uppercase;
     font-size: 7vw;
     line-height: 8vw;
     overflow: visible;
-  }
-  .hero:nth-child(2){
-    margin-top: 10vh;}
- #hero3 {
+}
+
+.hero:nth-child(2) {
+    margin-top: 10vh;
+}
+
+#hero3 {
     display: flex;
     min-height: 17.4vh;
- }
-#hero3 h1{
+}
+
+#hero3 h1 {
     font-size: 7vw;
     text-transform: uppercase;
     border-bottom: 1vw solid white;
@@ -215,24 +277,28 @@ html , body{
     display: block;
     color: white;
 }
-#hero3 h3{
+
+#hero3 h3 {
     font-size: 12vh;
 }
-#hero3 h1:hover{
+
+#hero3 h1:hover {
     -webkit-text-stroke: 1px white;
     color: rgba(255, 255, 255, 0);
     font-weight: 300;
-    border-bottom: 0px ;
+    border-bottom: 0px;
 }
-#page2{
+
+#page2 {
     width: 100%;
     height: 80vh;
     position: relative;
     margin-top: 18vw;
     /* background-color: salmon; */
-    
+
 }
-#page2 #video1{
+
+#page2 #video1 {
     width: 74vw;
     background-color: saddlebrown;
     height: 58vh;
@@ -244,24 +310,27 @@ html , body{
     background-image: url(https://obys.agency/wp-content/uploads/2022/11/Showreel-2022-preview-1.jpg);
     background-size: cover;
     background-position: center;
-    
+
 }
-#page2 #video1 img{
+
+#page2 #video1 img {
     width: 100%;
     height: 100%;
     position: absolute;
 }
-#page2 #video1 video{
+
+#page2 #video1 video {
     object-fit: cover;
     object-position: center;
     height: 99%;
     width: 100%;
     opacity: 0;
 }
-#page2 #video-cursor{
+
+#page2 #video-cursor {
     width: 10vw;
     height: 10vw;
-    background-color:#FFA63D;
+    background-color: #FFA63D;
     border-radius: 50%;
     position: absolute;
     top: -12%;
@@ -272,10 +341,12 @@ html , body{
     display: flex;
 
 }
-#page2 i{
+
+#page2 i {
     font-size: 3vw;
 }
-#page3{
+
+#page3 {
     min-height: fit-content;
     width: 100%;
     /* background-color:#d00000; */
@@ -285,7 +356,7 @@ html , body{
     /* background-color: #FFA63D; */
 }
 
-#page3 .container{
+#page3 .container {
     position: relative;
     width: 80%;
     min-height: 250vh;
@@ -294,14 +365,16 @@ html , body{
     /* background-color: cadetblue; */
     /* border-bottom: 0.2vh solid #ffe9e9; */
 }
-.container >h1{
+
+.container>h1 {
     font-size: 8vw;
     width: 100%;
     margin-bottom: 8vh;
     text-align: start;
-    
+
 }
-.container >p{
+
+.container>p {
     font-size: 2.2vw;
     width: 43%;
     /* margin-left: 27vh; */
@@ -310,7 +383,8 @@ html , body{
     color: #7e7a7a;
 
 }
-.container #imagearea{
+
+.container #imagearea {
     margin-top: 5vw;
     width: 60vw;
     /* position: absolute; */
@@ -320,49 +394,55 @@ html , body{
     min-height: 40vh;
     gap: 2vw;
 }
-#imagearea img{
+
+#imagearea img {
     /* position: absolute; */
     width: 50vw;
     height: 80vh;
-    
+
 }
-#imagearea p{
+
+#imagearea p {
     font-weight: 300;
     width: 70vh;
     font-size: 1.1vw;
 }
-.container #upline{
+
+.container #upline {
     width: 80vw;
     /* position: absolute; */
     height: 0.2vh;
     background-color: #ffe9e9;
-    
+
 }
-.container #downline{
+
+.container #downline {
     width: 80vw;
     /* position: absolute; */
     height: 0.2vh;
-    position:absolute;
+    position: absolute;
     bottom: 7%;
     background-color: #ffe9e9;
-    
+
 }
-.container .elems{
-   min-height:60vh;
+
+.container .elems {
+    min-height: 60vh;
     width: 40%;
     background-color: #3F7DF4;
     position: absolute;
-    top:135vh;
+    top: 135vh;
     left: 25vw;
-    padding: 4vw  2vw;
+    padding: 4vw 2vw;
     border-radius: 1%;
-    
+
 }
-.elems .inelem{
+
+.elems .inelem {
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
-    width:  100%;
+    width: 100%;
     /* background-color: darkblue; */
     margin-top: 2px;
     text-align: start;
@@ -370,17 +450,19 @@ html , body{
     margin-bottom: 5vh;
     /* margin-top: 5vh; */
     height: 10vh;
-    gap:1vw;
-    
-    
+    gap: 1vw;
+
+
 }
-.elems .inelem p{
+
+.elems .inelem p {
     margin-left: 4vw;
     font-size: 1.1vw;
     font-family: plainlight;
     font-weight: 100;
 }
-.elems .inelem h2{
+
+.elems .inelem h2 {
     width: 10vw;
     margin-left: 1vw;
     font-weight: 200;
@@ -388,9 +470,10 @@ html , body{
     font-size: 1.4vw;
     font-family: plainregular;
     text-wrap: nowrap;
-    
+
 }
-#page4::before{
+
+#page4::before {
     content: "We Work With";
     position: absolute;
     left: 30vw;
@@ -399,31 +482,33 @@ html , body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#page4{
+#page4 {
     min-height: 70vh;
     width: 100%;
-    background-color:#151515;
+    background-color: #151515;
     position: relative;
     /* padding: 8vw ; */
     /* background-color: aquamarine; */
     /* margin-top: 10vh; */
-    
+
 }
-#page4 .runelem1{
+
+#page4 .runelem1 {
     width: 100%;
     height: 15vh;
     /* line-height: 4vw; */
     /* background-color: wheat; */
     white-space: nowrap;
 }
-#page4 .runelem1 h1{
+
+#page4 .runelem1 h1 {
     font-size: 12vh;
     display: inline-block;
     -webkit-text-stroke: 0.11vw white;
     /* -webkit-text-fill-color: transparent; */
     color: transparent;
     font-weight: 400;
- 
+
     margin-right: 12px;
     animation-name: leftmove;
     animation-timing-function: linear;
@@ -432,17 +517,20 @@ html , body{
 
 
 }
-#page4 span{
+
+#page4 span {
     font-family: silkregular;
 }
-#page4 .runelem2{
+
+#page4 .runelem2 {
     white-space: nowrap;
     width: 100%;
     height: 15vh;
     /* overflow-x: auto;background-color: #3F7DF4; */
-    
+
 }
-#page4 .runelem2 h1{
+
+#page4 .runelem2 h1 {
     font-size: 12vh;
     display: inline-block;
     -webkit-text-stroke: 0.11vw white;
@@ -457,43 +545,51 @@ html , body{
 
 
 }
+
 @keyframes rightmove {
-    from{
+    from {
         transform: translateX(0%);
     }
-    to{
+
+    to {
         transform: translateX(calc(-100% - 20px));
     }
 }
+
 @keyframes leftmove {
-    to{
+    to {
         transform: translateX(0%);
     }
-    from{
+
+    from {
         transform: translateX(calc(-100% - 25px));
     }
 }
-#footer{
+
+#footer {
     width: 100%;
     height: 100vh;
     position: relative;
     /* background-color: rgb(30, 11, 30); */
-    padding: 10vw ;
+    padding: 10vw;
     padding-left: 30vw;
     padding-bottom: 50vw;
 }
-#footer>h1{
+
+#footer>h1 {
     font-size: 7.3vw;
     text-transform: uppercase;
     margin-bottom: 8vh;
 }
-#footer #adress{
+
+#footer #adress {
     display: flex;
     border-top: 2px solid white;
     gap: 5vw;
-    
+
 }
-#footer #adress #social{
+
+#footer #adress #social {
     margin-top: 7vw;
 
     width: 30%;
@@ -505,51 +601,59 @@ html , body{
     flex-direction: column;
     height: fit-content;
 }
-#social h5{
+
+#social h5 {
     margin-bottom: 1.3vw;
     font-size: 1.2vw;
     font-weight: 200;
 }
-#social h4{
+
+#social h4 {
     /* margin-bottom: 1.3vw; */
     font-size: 1.6vw;
     font-weight: 200;
     /* background-color: firebrick; */
     width: 17vw;
 }
-#footerline{
+
+#footerline {
     width: 100%;
     height: 0.1vw;
     background-color: white;
     margin-top: 15vh;
 }
-#main h2{
+
+#main h2 {
     text-transform: capitalize;
     font-weight: 200;
     font-size: 1.3vw;
-    margin-top:1vw;
+    margin-top: 1vw;
 }
-#ourprojects{
+
+#ourprojects {
     position: relative;
     width: 100%;
-    min-height:200vh;
+    min-height: 200vh;
     padding-top: 20vh;
     /* background-color: thistle; */
 }
-#ourprojects >h1{
+
+#ourprojects>h1 {
     font-size: 7vw;
     width: 120%;
     margin-left: 30vw;
     padding-top: 5vw;
 
 }
-#ourprojects .underline{
+
+#ourprojects .underline {
     width: 55%;
     height: 0.15vw;
     margin-top: 3vw;
     background-color: white;
     margin-left: 30vw;
 }
+
 /* #ourprojects .project-container{
     min-height: 100vh;
     width: 100%;
@@ -626,11 +730,11 @@ html , body{
     z-index: 99990 !important;
     pointer-events: none;
 } */
-#ourprojects #elems{
+#ourprojects #elems {
     width: 100%;
     height: 200vh;
     flex-wrap: wrap;
-    
+
     /* background-color: rgb(86, 86, 24); */
     position: relative;
     padding: 4vw;
@@ -638,27 +742,31 @@ html , body{
     align-items: flex-start;
     justify-content: space-around;
 }
-#image-div{
+
+#image-div {
     flex-shrink: 0;
     position: relative;
     overflow: hidden;
     width: 25vw;
     height: 35vw;
     /* background-color: yellowgreen; */
-        
+
 }
-#image-div img{
+
+#image-div img {
     width: 100%;
     height: 100%;
     /* position: absolute; */
     /* border-radius: 5vw; */
 
 }
-.canvas_container{
+
+.canvas_container {
     z-index: 99999 !important;
     pointer-events: none;
 }
-#image-divc{
+
+#image-divc {
     width: 25vw;
     height: 35vw;
     align-items: center;
@@ -667,7 +775,8 @@ html , body{
     position: relative;
     /* background-color: #3F7DF4; */
 }
-#image-divc #cir{
+
+#image-divc #cir {
     width: 15vw;
     border-radius: 50%;
     border: 0.3vw solid white;
@@ -679,12 +788,14 @@ html , body{
     position: relative;
     /* background-color: yellowgreen; */
 }
-#cir img{
+
+#cir img {
     rotate: -120deg;
     /* background-color: #3F7DF4; */
     /* margin-left: 4vw; */
     position: absolute;
 }
+
 #cir #circlein {
     width: 100%;
     height: 100%;
@@ -698,24 +809,28 @@ html , body{
     transition: all ease 0.3s;
     transition-delay: 0.1s;
 }
-.mousefollower{
-    border:2px soliid white;
+
+.mousefollower {
+    border: 2px soliid white;
     background-color: white;
     scale: 2;
     mix-blend-mode: difference;
 }
-#cir #circlein h6{
+
+#cir #circlein h6 {
     position: absolute;
     color: black;
     font-size: 0.95vw;
     width: 80%;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
+
 }
-#cir:hover #circlein{
+
+#cir:hover #circlein {
     scale: 1;
 }
+
 /* #cir #circlein:hover h6 {
     scale: 1;
 } */
@@ -727,14 +842,368 @@ html , body{
     left: 33%;
     /* display: none; */
     opacity: 0;
-    z-index: 9; /* Add this to ensure it's on top */
-    pointer-events: none; /* Optional: make it non-interactive */
+    z-index: 9;
+    /* Add this to ensure it's on top */
+    pointer-events: none;
+    /* Optional: make it non-interactive */
     transition: opacity 0.3s ease;
     /* background-color: #3F7DF4; */
 }
-#flg img{
+
+#flg img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
 }
 
+@media (max-width: 600px) {
+    #loader h2 {
+        font-size: 10vw;
+    }
+
+    .line h1 {
+        font-size: 10vw;
+        line-height: 10vh;
+    }
+
+    #page1 {
+        padding: 5vw;
+    }
+
+    #nav {
+        padding: 2vw 0;
+    }
+
+    #logo {
+        width: 30vw;
+        justify-content: flex-start;
+    }
+
+    #nav #navpart2 {
+        display: none;
+    }
+
+    #nav #navpart3 {
+        display: none;
+        /* Consider a hamburger menu for extensive mobile nav, hiding for simplicity based on current structure */
+    }
+
+    .hero {
+        margin-left: 0;
+        text-align: left;
+        /* Or center */
+    }
+
+    .hero h1 {
+        font-size: 14vw;
+        line-height: 15vw;
+    }
+
+    #hero3 {
+        min-height: auto;
+        /* flex-wrap: wrap; removed wrapping to keep cleaner look */
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 2vw;
+    }
+
+    #hero3 h1 {
+        font-size: 10vw;
+        /* Reduced to fit */
+    }
+
+    #hero3 h3 {
+        font-size: 10vw;
+        /* Added for slash sizing on mobile */
+    }
+
+    #page2 {
+        height: 50vh;
+        margin-top: 10vh;
+    }
+
+    #page2 #video1 {
+        width: 90vw;
+        left: 5vw;
+        height: 40vh;
+    }
+
+    #page2 #video-cursor {
+        width: 25vw;
+        height: 25vw;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #page3 {
+        padding: 10vw 0;
+        margin-top: 5vh;
+    }
+
+    #page3 .container {
+        width: 90%;
+        left: 5%;
+        min-height: auto;
+    }
+
+    .container>h1 {
+        font-size: 12vw;
+    }
+
+    .container>p {
+        width: 100%;
+        font-size: 5vw;
+        margin-top: 5vh;
+    }
+
+    .container #imagearea {
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10vw;
+    }
+
+    #imagearea img {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    #imagearea p {
+        width: 100%;
+        font-size: 4vw;
+        margin-top: 5vw;
+    }
+
+    .container .elems {
+        width: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-top: 10vw;
+        padding: 5vw;
+        min-height: auto;
+    }
+
+    .elems .inelem {
+        margin-bottom: 2vh;
+        height: auto;
+        padding-bottom: 2vh;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1vh;
+    }
+
+    .elems .inelem h2 {
+        font-size: 6vw;
+        width: auto;
+    }
+
+    .elems .inelem p {
+        margin-left: 0;
+        font-size: 4vw;
+    }
+
+    #ourprojects {
+        padding-top: 10vh;
+        min-height: auto;
+    }
+
+    #ourprojects>h1 {
+        font-size: 12vw;
+        margin-left: 5vw;
+        width: 90%;
+    }
+
+    #ourprojects .underline {
+        margin-left: 5vw;
+        width: 90%;
+    }
+
+    #ourprojects #elems {
+        height: auto;
+        padding: 5vw 0;
+        flex-direction: column;
+        gap: 5vh;
+        /* Disable dragging logic layout for mobile if necessary, or just stack */
+    }
+
+    #image-div,
+    #image-divc {
+        width: 90vw;
+        height: 100vw;
+        margin-bottom: 5vw;
+    }
+
+    #image-divc #cir {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    #cir #circlein h6 {
+        font-size: 3vw;
+    }
+
+    #page4 .runelem1 h1,
+    #page4 .runelem2 h1 {
+        font-size: 8vh;
+    }
+
+    #footer {
+        padding: 10vw 5vw;
+        height: auto;
+        padding-bottom: 10vh;
+    }
+
+    #footer>h1 {
+        font-size: 15vw;
+    }
+
+    #footer #adress {
+        flex-direction: column;
+        gap: 8vw;
+    }
+
+    #footer #adress #social {
+        width: 100%;
+    }
+
+    #social h5 {
+        font-size: 4vw;
+    }
+
+    #social h4 {
+        font-size: 5vw;
+        width: auto;
+    }
+
+    #hero3 h1:hover {
+        /* Disable hover effect styles on mobile if they break layout */
+        -webkit-text-stroke: 0;
+        color: white;
+        border-bottom: 1vw solid white;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    #page1 {
+        padding: 4vw;
+    }
+
+    .hero h1 {
+        font-size: 10vw;
+        line-height: 11vw;
+    }
+
+    #hero3 h1 {
+        font-size: 10vw;
+    }
+
+    #logo {
+        width: 15vw;
+    }
+
+    #page2 {
+        height: 60vh;
+        margin-top: 15vh;
+    }
+
+    #page2 #video1 {
+        width: 80vw;
+        left: 10vw;
+        height: 50vh;
+    }
+
+    #page2 #video-cursor {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    #page3 {
+        padding: 10vw 0;
+    }
+
+    #page3 .container {
+        width: 90%;
+        /* Use more width on tablet */
+        left: 5%;
+        min-height: auto;
+    }
+
+    .container>h1 {
+        font-size: 9vw;
+    }
+
+    .container>p {
+        width: 80%;
+        font-size: 3vw;
+    }
+
+    .container #imagearea {
+        width: 100%;
+        margin-top: 8vw;
+    }
+
+    #imagearea img {
+        width: 50vw;
+        height: auto;
+    }
+
+    .container .elems {
+        width: 60%;
+        /* Wider info box */
+        left: 20%;
+        top: 0;
+        margin-top: 5vw;
+        position: relative;
+        min-height: auto;
+        padding: 3vw;
+    }
+
+    #ourprojects>h1 {
+        font-size: 9vw;
+        margin-left: 5vw;
+        width: 90%;
+    }
+
+    #ourprojects .underline {
+        margin-left: 5vw;
+        width: 90%;
+    }
+
+    #ourprojects #elems {
+        height: auto;
+        padding: 5vw;
+        justify-content: space-between;
+    }
+
+    #image-div,
+    #image-divc {
+        width: 40vw;
+        /* Two columns */
+        height: 50vw;
+        margin-bottom: 5vw;
+    }
+
+    #image-divc #cir {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    #footer {
+        padding: 8vw;
+        padding-bottom: 20vh;
+    }
+
+    #footer>h1 {
+        font-size: 10vw;
+    }
+
+    #footer #adress {
+        gap: 5vw;
+    }
+
+    #social h4 {
+        font-size: 2.5vw;
+        width: auto;
+    }
+}
